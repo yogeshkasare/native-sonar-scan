@@ -1,0 +1,621 @@
+{
+  "_id": "69e1db02aee4e54154173ce7",
+  "name": "OPL-34584",
+  "description": "helli",
+  "owner": "68c10683f83c8f3eb99e9c8f",
+  "roles": [
+    {
+      "role": "administrator",
+      "user": "yogesh.kasare@proton.me",
+      "site_role": "",
+      "group": ""
+    },
+    {
+      "role": "power_user",
+      "user": "dammu.srinivasulu05@protonmail.com",
+      "site_role": "",
+      "group": ""
+    }
+  ],
+  "tags": [
+    {
+      "type": "tool",
+      "value": "pipeline-vr"
+    }
+  ],
+  "type": [],
+  "organizationName": "opsera protonmail test account",
+  "account": "org109-acc",
+  "project": {
+    "name": "",
+    "project_id": ""
+  },
+  "workflow": {
+    "source": {
+      "name": "",
+      "service": "github",
+      "accountId": "682f039eee8c55ffd81561bc",
+      "workspace": "",
+      "workspaceName": "",
+      "repository": "native-sonar-scan",
+      "repoId": "yogeshkasare/native-sonar-scan",
+      "projectId": "yogeshkasare/native-sonar-scan",
+      "gitUrl": "https://github.com/yogeshkasare/native-sonar-scan",
+      "sshUrl": "git@github.com:yogeshkasare/native-sonar-scan.git",
+      "branch": "main",
+      "secondary_branches": [],
+      "key": "",
+      "trigger_active": false,
+      "isPushEvent": true,
+      "isPrEvent": false,
+      "isMonitored": false,
+      "sendStepUpdates": false,
+      "prCreatedEvent": true,
+      "prApprovedEvent": false,
+      "gitExportEnabled": true,
+      "gitExportPath": "",
+      "dynamicSettings": false,
+      "allowDynamicSettingsInUi": false,
+      "allowPipelineParametersInUi": false,
+      "allowDynamicSettingsInSalesforceUi": false,
+      "enableBranchSwitch": false,
+      "opseraEdgeToolId": "",
+      "useOpseraEdgeProxy": false,
+      "baselineFromSuccessfulRun": false,
+      "branch_pattern": [],
+      "autoPopulateToSteps": false
+    },
+    "schedule": {
+      "start_date": null,
+      "end_date": null,
+      "frequency": ""
+    },
+    "last_step": {
+      "status": "reset",
+      "check_count": 0,
+      "step_id": ""
+    },
+    "last_run": {
+      "status": "reset"
+    },
+    "plan": [
+      {
+        "name": "terrafrom",
+        "description": "",
+        "tool": {
+          "tool_identifier": "terraform"
+        },
+        "trigger": [],
+        "type": [
+          "infrastructure-code"
+        ],
+        "orchestration_type": "standard",
+        "notification": [],
+        "tags": [],
+        "active": true,
+        "dependencies": [],
+        "updatedAt": "2026-04-17T07:25:13.955Z",
+        "_id": "69e1e0595ad7495e0e1c305b"
+      },
+      {
+        "name": "approval",
+        "description": "",
+        "tool": {
+          "tool_identifier": "approval"
+        },
+        "trigger": [],
+        "type": [
+          "interaction-gate"
+        ],
+        "orchestration_type": "standard",
+        "notification": [],
+        "tags": [],
+        "active": true,
+        "dependencies": [
+          "69e1e0595ad7495e0e1c305b"
+        ],
+        "updatedAt": "2026-04-17T07:29:03.600Z",
+        "_id": "69e1e13f689c89d1abfc91ff"
+      },
+      {
+        "name": "terrafrom-2",
+        "notes": "",
+        "description": "",
+        "tool": {
+          "tool_identifier": "terraform"
+        },
+        "trigger": [],
+        "type": [
+          "infrastructure-code"
+        ],
+        "orchestration_type": "standard",
+        "notification": [],
+        "tags": [],
+        "active": true,
+        "dependencies": [
+          "69e1e13f689c89d1abfc91ff"
+        ],
+        "updatedAt": "2026-04-17T07:29:54.157Z",
+        "_id": "69e1e172fb5063716f473ca5"
+      },
+      {
+        "name": "salesforce",
+        "notes": "",
+        "description": "",
+        "tool": {
+          "tool_identifier": "salesforce-code-analyzer",
+          "configuration": {
+            "overrideStartWorkflowValues": false,
+            "executionEngine": "job-engine",
+            "jobType": "SFDC_CODE_SCAN",
+            "toolConfigId": "",
+            "jobName": "",
+            "toolJobId": "",
+            "toolJobType": "",
+            "projectId": "",
+            "gitBranch": "",
+            "gitToolId": "",
+            "repoId": "",
+            "gitUrl": "",
+            "sshUrl": "",
+            "service": "",
+            "gitCredential": "",
+            "gitUserName": "",
+            "repository": "",
+            "branch": "",
+            "workspace": "",
+            "stepIdXML": "5ec7c8cedc73d971e2860b68",
+            "sfdxScanToolId": "69c629a923ec1c659aa16d4e",
+            "qualityGateIds": [
+              "69e1ec12b4f85081827bf8a0"
+            ]
+          },
+          "threshold": {
+            "type": "",
+            "value": ""
+          },
+          "job_type": "opsera-job"
+        },
+        "trigger": [],
+        "type": [
+          "code-scan"
+        ],
+        "orchestration_type": "standard",
+        "notification": [],
+        "tags": [],
+        "active": false,
+        "dependencies": [],
+        "updatedAt": "2026-04-17T07:05:29.350Z",
+        "_id": "69e1dbb9fb5063716f4729a3"
+      },
+      {
+        "name": "approva2",
+        "notes": "",
+        "description": "",
+        "tool": {
+          "tool_identifier": "approval"
+        },
+        "trigger": [],
+        "type": [
+          "interaction-gate"
+        ],
+        "orchestration_type": "standard",
+        "notification": [],
+        "tags": [],
+        "active": true,
+        "dependencies": [
+          "69e1dbb9fb5063716f4729a3"
+        ],
+        "updatedAt": "2026-04-17T07:31:11.045Z",
+        "_id": "69e1e1bf36c3e19ef817f58a"
+      },
+      {
+        "name": "azure",
+        "description": "",
+        "tool": {
+          "tool_identifier": "azure"
+        },
+        "trigger": [],
+        "type": [
+          "tool_account"
+        ],
+        "orchestration_type": "standard",
+        "notification": [],
+        "tags": [],
+        "active": true,
+        "dependencies": [
+          "69e1e1bf36c3e19ef817f58a"
+        ],
+        "updatedAt": "2026-04-17T07:31:46.745Z",
+        "_id": "69e1e1e2aee4e541541753d1"
+      },
+      {
+        "name": "demo-2",
+        "notes": "",
+        "description": "",
+        "tool": {
+          "tool_identifier": "npm"
+        },
+        "trigger": [],
+        "type": [
+          "script"
+        ],
+        "orchestration_type": "standard",
+        "notification": [],
+        "tags": [],
+        "active": false,
+        "dependencies": [],
+        "updatedAt": "2026-04-17T07:19:02.870Z",
+        "_id": "69e1dee6689c89d1abfc89a5"
+      },
+      {
+        "name": "azure-33",
+        "description": "",
+        "tool": {
+          "tool_identifier": "azure"
+        },
+        "trigger": [],
+        "type": [
+          "tool_account"
+        ],
+        "orchestration_type": "standard",
+        "notification": [],
+        "tags": [],
+        "active": true,
+        "dependencies": [
+          "69e1dee6689c89d1abfc89a5"
+        ],
+        "updatedAt": "2026-04-17T07:35:39.689Z",
+        "_id": "69e1e2cb36c3e19ef817f937"
+      },
+      {
+        "name": "Copy of azure33",
+        "notes": "",
+        "description": "",
+        "tool": {
+          "tool_identifier": "azure"
+        },
+        "trigger": [],
+        "type": [
+          "tool_account"
+        ],
+        "orchestration_type": "standard",
+        "notification": [],
+        "tags": [],
+        "active": true,
+        "dependencies": [
+          "69e1e1bf36c3e19ef817f58a"
+        ],
+        "updatedAt": "2026-04-17T07:32:12.275Z",
+        "_id": "69e1e1fcb4f85081827bdae6"
+      },
+      {
+        "name": "Copy of Copy of azure",
+        "description": "",
+        "tool": {
+          "tool_identifier": "azure"
+        },
+        "trigger": [],
+        "type": [
+          "tool_account"
+        ],
+        "notification": [],
+        "tags": [],
+        "active": true,
+        "dependencies": [
+          "69e1e1bf36c3e19ef817f58a"
+        ],
+        "updatedAt": "2026-04-17T07:32:25.422Z",
+        "_id": "69e1e20936c3e19ef817f6b8"
+      },
+      {
+        "name": "Copy of Copy of Copy of azure",
+        "description": "",
+        "tool": {
+          "tool_identifier": "azure"
+        },
+        "trigger": [],
+        "type": [
+          "tool_account"
+        ],
+        "notification": [],
+        "tags": [],
+        "active": true,
+        "dependencies": [
+          "69e1e1bf36c3e19ef817f58a"
+        ],
+        "updatedAt": "2026-04-17T07:32:41.848Z",
+        "_id": "69e1e219aee4e541541754ac"
+      },
+      {
+        "name": "Copy of Copy of Copy of Copy of azure",
+        "description": "",
+        "tool": {
+          "tool_identifier": "azure"
+        },
+        "trigger": [],
+        "type": [
+          "tool_account"
+        ],
+        "notification": [],
+        "tags": [],
+        "active": true,
+        "dependencies": [
+          "69e1e1bf36c3e19ef817f58a"
+        ],
+        "updatedAt": "2026-04-17T07:32:57.489Z",
+        "_id": "69e1e22936c3e19ef817f727"
+      },
+      {
+        "name": "Copy of azure-3344",
+        "notes": "",
+        "description": "",
+        "tool": {
+          "tool_identifier": "azure"
+        },
+        "trigger": [],
+        "type": [
+          "tool_account"
+        ],
+        "orchestration_type": "standard",
+        "notification": [],
+        "tags": [],
+        "active": true,
+        "dependencies": [
+          "69e1dee6689c89d1abfc89a5"
+        ],
+        "updatedAt": "2026-04-17T07:37:43.402Z",
+        "_id": "69e1e347b4f85081827bdece"
+      },
+      {
+        "name": "Copy of Copy of azure-33",
+        "description": "",
+        "tool": {
+          "tool_identifier": "azure"
+        },
+        "trigger": [],
+        "type": [
+          "tool_account"
+        ],
+        "notification": [],
+        "tags": [],
+        "active": true,
+        "dependencies": [
+          "69e1dee6689c89d1abfc89a5"
+        ],
+        "updatedAt": "2026-04-17T07:38:02.131Z",
+        "_id": "69e1e35a5ad7495e0e1c39ef"
+      },
+      {
+        "name": "ne-step",
+        "description": "",
+        "tool": {
+          "tool_identifier": "command-line"
+        },
+        "trigger": [],
+        "type": [
+          "script"
+        ],
+        "orchestration_type": "standard",
+        "notification": [],
+        "tags": [],
+        "active": true,
+        "dependencies": [],
+        "updatedAt": "2026-06-18T07:36:46.701Z",
+        "_id": "6a33a00e851c4a71395bb5fd"
+      },
+      {
+        "name": "Copy of approva2",
+        "description": "",
+        "tool": {
+          "tool_identifier": "approval"
+        },
+        "trigger": [],
+        "type": [
+          "interaction-gate"
+        ],
+        "notification": [],
+        "active": true,
+        "dependencies": [
+          "69e1dbb9fb5063716f4729a3"
+        ],
+        "_id": "6a33a03130de6341e8b8d469",
+        "tags": [],
+        "updatedAt": "2026-06-18T07:37:21.524Z"
+      }
+    ],
+    "run_count": 1,
+    "canvas_layout": {
+      "manual_layout_active": true,
+      "orientations": {
+        "vertical": {
+          "start": {
+            "x": 0,
+            "y": 30
+          },
+          "69e1e0595ad7495e0e1c305b": {
+            "x": -1486.7199999999998,
+            "y": 258.48
+          },
+          "69e1dbb9fb5063716f4729a3": {
+            "x": -393.98400000000004,
+            "y": 293.808
+          },
+          "69e1dee6689c89d1abfc89a5": {
+            "x": 342.3999999999999,
+            "y": 266.54400000000004
+          },
+          "69e1e13f689c89d1abfc91ff": {
+            "x": -1516.16,
+            "y": 522.72
+          },
+          "69e1e1bf36c3e19ef817f58a": {
+            "x": -386.94399999999996,
+            "y": 537.6959999999998
+          },
+          "69e1e2cb36c3e19ef817f937": {
+            "x": 753.4079999999999,
+            "y": 862.9439999999998
+          },
+          "69e1e347b4f85081827bdece": {
+            "x": 1122.3040000000003,
+            "y": 862.56
+          },
+          "69e1e35a5ad7495e0e1c39ef": {
+            "x": 1492.8799999999994,
+            "y": 859.8719999999998
+          },
+          "69e1e172fb5063716f473ca5": {
+            "x": -1515.7120000000002,
+            "y": 855.6960000000001
+          },
+          "69e1e1e2aee4e541541753d1": {
+            "x": -1137.216,
+            "y": 858.7679999999999
+          },
+          "69e1e1fcb4f85081827bdae6": {
+            "x": -757.9519999999999,
+            "y": 860.6880000000001
+          },
+          "69e1e20936c3e19ef817f6b8": {
+            "x": -386.36799999999994,
+            "y": 865.296
+          },
+          "69e1e219aee4e541541754ac": {
+            "x": -10.17599999999986,
+            "y": 866.064
+          },
+          "69e1e22936c3e19ef817f727": {
+            "x": 374.08000000000015,
+            "y": 866.0640000000001
+          },
+          "end": {
+            "x": -21.120000000000005,
+            "y": 1325.76
+          }
+        }
+      },
+      "updated_at": "2026-06-18T02:35:45.326Z"
+    }
+  },
+  "active": true,
+  "template": "5ec7c8cedc73d9532e860b67",
+  "templateIdentifier": "blank_pipeline_template",
+  "createdAt": "2026-04-17T07:02:26.858Z",
+  "updatedAt": "2026-06-18T07:37:45.349Z",
+  "__v": 1,
+  "notificationRules": [],
+  "owner_name": "Yogesh.Kasare Proton",
+  "releaseNotesEnabled": true,
+  "releaseNotesJiraEnabled": false,
+  "ticketPattern": "ghee",
+  "notification": [
+    {
+      "type": "email",
+      "addresses": [
+        "yogesh/hm@a.com"
+      ],
+      "event": "error",
+      "enabled": true,
+      "logEnabled": false,
+      "notifyTriggeredUser": false,
+      "manifestAttachment": {
+        "enabled": false,
+        "format": "json"
+      }
+    },
+    {
+      "type": "slack",
+      "channel": "",
+      "toolId": "",
+      "event": "finished",
+      "enabled": false,
+      "logEnabled": false
+    },
+    {
+      "type": "jira",
+      "event": "all",
+      "jiraBoard": "",
+      "jiraToolId": "",
+      "jiraProject": "",
+      "jiraPriority": "",
+      "jiraSprint": "",
+      "jiraParentTicket": "",
+      "jiraPrimaryAssignee": "",
+      "jiraSecondaryAssignees": [],
+      "jiraOpenStep": "",
+      "jiraClosureStep": "",
+      "enabled": false
+    },
+    {
+      "type": "teams",
+      "event": "all",
+      "toolId": "",
+      "enabled": false,
+      "logEnabled": false,
+      "teamsType": "webhook",
+      "teamsId": "",
+      "teamsName": "",
+      "channelId": "",
+      "channelName": ""
+    },
+    {
+      "type": "servicenow",
+      "event": "all",
+      "toolId": "",
+      "serviceNowUserId": "",
+      "serviceNowGroupId": "",
+      "enabled": false
+    },
+    {
+      "type": "gchat",
+      "event": "all",
+      "toolId": "",
+      "enabled": false,
+      "logEnabled": false
+    },
+    {
+      "type": "azure",
+      "event": "all",
+      "enabled": false,
+      "logEnabled": false,
+      "azureBoardId": "",
+      "azureBoardName": "",
+      "azureToolId": "",
+      "azureTeamId": "",
+      "azureTeamName": "",
+      "azureProjectName": "",
+      "azureProjectId": "",
+      "azurePriority": "",
+      "azureSprint": "",
+      "azureSprintId": "",
+      "azureWorkType": "",
+      "azureParentTicket": "",
+      "azurePrimaryAssignee": ""
+    },
+    {
+      "type": "github",
+      "event": "all",
+      "enabled": false,
+      "logEnabled": false,
+      "toolId": "",
+      "githubLabels": [],
+      "assignees": [],
+      "githubRepositoryId": "",
+      "githubIssueType": "",
+      "githubParentIssueId": ""
+    },
+    {
+      "type": "settings",
+      "sendStepLevelNotification": false,
+      "sendReportsWithNotifications": false,
+      "sendRuntimeExceededNotification": false,
+      "logEnabled": false,
+      "reportFormats": [
+        "pdf",
+        "excel"
+      ]
+    }
+  ],
+  "parameters": []
+}
